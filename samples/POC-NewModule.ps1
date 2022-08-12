@@ -2,7 +2,7 @@
 
 #a proof of concept to convert scripts to a new module
 
-Import-Module PSFunctionTools -Force
+Import-Module PSFunctionTools-Tom -Force
 
 $NewModuleName = "PSMagic"
 $Description = "A sample PowerShell module"

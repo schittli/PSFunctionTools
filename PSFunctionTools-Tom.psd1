@@ -1,16 +1,16 @@
 #
-# Module manifest for module PSFunctionTools
+# Module manifest for module PSFunctionTools-Tom
 #
 
 @{
-    RootModule           = 'PSFunctionTools.psm1'
-    ModuleVersion        = '1.0.0'
+    RootModule           = 'PSFunctionTools-Tom.psm1'
+    ModuleVersion        = '1.0.1'
     CompatiblePSEditions = 'Core'
-    GUID                 = '151466e0-a952-4b6a-ad81-40dafc9ef9bb'
-    Author               = 'Jeff Hicks'
-    CompanyName          = 'JDH Information Technology Solutions, Inc.'
-    Copyright            = '(c) 2021-2022 JDH Information Technology Solutions, Inc.'
-    Description          = 'A set of PowerShell commands for managing and automating PowerShell scripts, functions, and modules.'
+    GUID                 = '2896522d-934d-481a-87a2-517582681ee4'
+    Author               = 'Thomas Schittli'
+    CompanyName          = ''
+    Copyright            = '(c) TomTom'
+    Description          = 'Based on Jeff Hicks PSFunctionTools 1.0.0. Patched by TomTom. A set of PowerShell commands for managing and automating PowerShell scripts, functions, and modules.'
     PowerShellVersion    = '7.1'
     # TypesToProcess = @()
     FormatsToProcess     = @('formats\modulelayout.format.ps1xml',
@@ -25,7 +25,7 @@
         'Get-PSRequirements', 'New-CommentHelp', 'Format-FunctionName',
         'Get-ModuleLayout', 'Get-ParameterBlock', 'Get-FunctionAttribute',
         'Get-FunctionProfile', 'New-ModuleFromFiles', 'New-ModuleFromLayout',
-        'Get-PSFunctionTools','Export-FunctionToFile')
+        'Get-PSFunctionTools-Tom','Export-FunctionToFile')
     CmdletsToExport      = @()
     # VariablesToExport = @()
     AliasesToExport      = @('gfal', 'ga', 'eff', 'eml', 'iml', 'csf', 'gpb',

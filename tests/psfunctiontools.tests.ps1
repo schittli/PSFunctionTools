@@ -31,7 +31,7 @@ Describe "$($global:ModuleName)" {
     } -Tag demo
 
     It "Has a markdown help file for <name>" -ForEach @(
-        (Get-Command -Module PSFunctiontools -CommandType function).ForEach({ @{Name = $_.name } })
+        (Get-Command -Module PSFunctionTools-Tom -CommandType function).ForEach({ @{Name = $_.name } })
     ) {
         $mdPath = Join-Path -Path "..\docs" -ChildPath "$($_.name).md"
         $mdPath | Should -Exist

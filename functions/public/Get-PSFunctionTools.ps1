@@ -1,6 +1,6 @@
 
 
-Function Get-PSFunctionTools {
+Function Get-PSFunctionTools-Tom {
     [cmdletbinding()]
     [outputtype("PSFunctionTool")]
     Param()
@@ -10,8 +10,8 @@ Function Get-PSFunctionTools {
     } #begin
 
     Process {
-        Write-Verbose "[$((Get-Date).TimeofDay) PROCESS] Getting commands from the PSFunctionTools module"
-        $cmds = Get-Command -Module PSFunctionTools -CommandType Function | where-object { Test-FunctionName $_.name -Quiet }
+        Write-Verbose "[$((Get-Date).TimeofDay) PROCESS] Getting commands from the PSFunctionTools-Tom module"
+        $cmds = Get-Command -Module PSFunctionTools-Tom -CommandType Function | where-object { Test-FunctionName $_.name -Quiet }
         Write-Verbose "[$((Get-Date).TimeofDay) PROCESS] Found $($cmds.count) commands"
         foreach ($cmd in $cmds) {
             [pscustomobject]@{
@@ -19,7 +19,7 @@ Function Get-PSFunctionTools {
                 Name          = $cmd.Name
                 Alias         = ($n = Get-Alias -Definition $cmd.name -ErrorAction SilentlyContinue) ? $n.name : $null
                 Synopsis      = (Get-Help $cmd.name).Synopsis
-                Module        = "PSFunctionTools"
+                Module        = "PSFunctionTools-Tom"
                 ModuleVersion = $cmd.version
             }
         }
@@ -30,4 +30,4 @@ Function Get-PSFunctionTools {
 
     } #end
 
-} #close Get-PSFunctionTools
+} #close Get-PSFunctionTools-Tom
