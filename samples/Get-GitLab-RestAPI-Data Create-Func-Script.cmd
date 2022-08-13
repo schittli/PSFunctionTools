@@ -12,7 +12,7 @@
 :: to create the variant as a function with the -Func suffix from the ps1 file found.
 :: 
 :: 
-:: 001, 220813, tom@jig.ch
+:: 001, 220813, tom-agplv3@jig.ch
 
 :: Verbose: 0 oder 1
 SET Verbose=0
