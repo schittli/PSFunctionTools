@@ -17,7 +17,14 @@
 #		Example:
 #			Convert-ScriptToFunction -Path 'c:\Temp\Source.ps1'-name GitLab-RestAPI -OutputFile '-Func' -Verbose
 #			# Creates: c:\Temp\Source-Func.ps1
-
+# 
+# 220813 TomTom
+# Fixed:
+#	This Exception must be a warning:
+# 		Convert-ScriptToFunction: 
+#		Cannot validate argument on parameter 'Name'. 
+#		Your function name should have a Verb-Noun naming convention
+# 
 
 # Sehr schnell, optional mit der expliziten Codierung
 # Write Text for a File
@@ -99,10 +106,18 @@ Function Convert-ScriptToFunction {
 		HelpMessage = "What is the name of your new function?")]
 		[ValidateScript({
 		if ($_ -match "^\w+-\w+$") {
-			$true
+			$True
 		} else {
-			Throw "Your function name should have a Verb-Noun naming convention"
-			$False
+			# 220813 TomTom
+			# Throw "Your function name should have a Verb-Noun naming convention"
+			# Assure that this warning is displayed only once
+			If ((Get-Variable -Scope Global -Name VerbNounWarning -EA SilentlyContinue).Value -ne $True) {
+				Set-Variable -Scope Global -Name VerbNounWarning -Value $True
+				Write-Host "`nWarning!" -ForegroundColor Red
+				Write-Host 'Your function name should have a Verb-Noun naming convention' -ForegroundColor Yellow
+				Start-Sleep -MilliS 2500
+			}
+			$True
 		}
 		})]
 		[string]$Name,

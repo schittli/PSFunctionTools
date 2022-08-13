@@ -4,7 +4,7 @@
 
 @{
     RootModule           = 'PSFunctionTools-Tom.psm1'
-    ModuleVersion        = '1.0.1'
+    ModuleVersion        = '1.0.2'
     CompatiblePSEditions = 'Core'
     GUID                 = '2896522d-934d-481a-87a2-517582681ee4'
     Author               = 'Thomas Schittli'
